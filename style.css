@@ -1,0 +1,203 @@
+body {
+  font-family: "Lora", serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(215, 218, 201) 100%
+  );
+}
+
+/* Ticket widget */
+@keyframes grow {
+  from {
+    scale: 0.5;
+    opacity: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #3e3e3e;
+}
+
+.ticket-widget-wrapper {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.1);
+  transition: 0.25s ease;
+  color: #3e3e3e;
+  opacity: 0.95;
+  animation: grow 0.5s ease;
+  perspective: 100px;
+}
+
+.ticket-widget-wrapper:hover {
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+  scale: 1.1;
+  cursor: pointer;
+  color: #3e3e3e30;
+}
+
+.ticket-widget {
+  padding: 0.5em 2em 0em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30em;
+}
+
+.ticket-widget-header {
+  font-weight: 800;
+  text-align: center;
+  word-spacing: 0.5em;
+}
+
+.ticket-widget-subheader {
+  font-size: 10px;
+}
+
+.ticket-widget-subheader span {
+  padding: 0 2em 0 2em;
+}
+
+.ticket-widget-title {
+  font-size: 1.75em;
+  text-align: center;
+  font-weight: 900;
+  word-spacing: 0.25em;
+}
+
+.ticket-widget-wrapper .hover-highlight {
+  transition: 1s;
+}
+
+.ticket-widget-wrapper:hover .hover-highlight {
+  scale: 1.1;
+  color: #000;
+  letter-spacing: 0.05em;
+}
+
+.ticket-widget-balance {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: 900;
+  font-family: sans-serif;
+}
+
+.ticket-widget img {
+  width: 50%;
+  position: relative;
+  transition: 0.25s;
+}
+
+.ticket-widget-wrapper:hover img {
+  opacity: 0.25;
+}
+
+.ticket-widget-barcode-subtext p {
+  margin: 0;
+  font-size: 10px;
+  word-spacing: 2em;
+  font-family: monospace;
+}
+
+.ticket-widget-balance-text {
+  font-size: 9px;
+  font-family: monospace;
+  word-spacing: -1px;
+  letter-spacing: -1px;
+}
+
+.ticket-widget-footer span {
+  margin: 0;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+.ticket-widget-side {
+  font-size: 8px;
+  padding-top: 2px;
+  text-align: center;
+  width: 0;
+  text-wrap: nowrap;
+  transform: translate(0, 50%);
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.ticket-widget-side.pre {
+  rotate: -90deg;
+}
+
+.ticket-widget-side.post {
+  rotate: 90deg;
+}
+
+.ticket-widget-square {
+  height: 0.2em;
+  width: 0.6em;
+  background-color: #3e3e3e;
+  position: absolute;
+  transition: 0.25s;
+}
+
+.ticket-widget-wrapper:hover .ticket-widget-square {
+  background-color: #3e3e3e30;
+}
+
+.ticket-widget-square.tl {
+  top: 0;
+  left: 0;
+}
+
+.ticket-widget-square.tr {
+  top: 0;
+  right: 0;
+}
+
+.ticket-widget-square.bl {
+  height: 0.3em;
+  bottom: 0;
+  left: 0;
+}
+
+.ticket-widget-square.br {
+  height: 0.3em;
+  bottom: 0;
+  right: 0;
+}
+
+/* brown logo */
+
+img#brown-logo {
+  position: absolute;
+  width: 2em;
+  bottom: 0.5em;
+  left: 0.5em;
+  opacity: 0.5;
+}
+
+img#brown-logo:hover {
+  opacity: 0.75;
+}
+
+/* mobile styling */
+@media (max-width: 600px) {
+  .ticket-widget-side {
+    display: none;
+  }
+
+  .ticket-widget-wrapper:hover .hover-highlight {
+    scale: 1;
+    letter-spacing: normal;
+  }
+}
